@@ -1,0 +1,12 @@
+package main
+
+import (
+	. "{{ .module }}/engine"
+	. "{{ .module }}/middleware"
+)
+
+func main() {
+	r := NewApp().Defalut().UseRouter()
+	r.Use(Cors())
+	panic(r.Run())
+}

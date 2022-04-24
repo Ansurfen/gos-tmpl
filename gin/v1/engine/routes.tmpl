@@ -1,0 +1,11 @@
+package engine
+
+import (
+	"{{ .module }}/middleware"
+	"{{ .module }}/routes"
+)
+
+func (s *SEngine) UseRouter() *SEngine {
+	s.POST("/login", routes.Login)
+	return s
+}

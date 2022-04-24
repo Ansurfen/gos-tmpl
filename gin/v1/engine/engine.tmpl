@@ -1,0 +1,18 @@
+package engine
+
+import "github.com/gin-gonic/gin"
+
+type SEngine struct {
+	*gin.Engine
+}
+
+func NewApp() *SEngine {
+	return &SEngine{
+		Engine: gin.New(),
+	}
+}
+
+func (s *SEngine) Defalut() *SEngine {
+	s.Engine = gin.Default()
+	return s
+}
