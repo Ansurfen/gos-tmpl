@@ -1,0 +1,9 @@
+{
+    "key":"db",
+    "version":"v1",
+    "branch":"db",
+    "path":[
+        "config.yml",
+        "init.go"
+    ]
+}

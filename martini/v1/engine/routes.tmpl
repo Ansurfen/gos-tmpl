@@ -1,0 +1,8 @@
+package engine
+
+func (s *SEngine) UseRouter() *SEngine {
+	s.Get("/", func() string {
+		return "hello world"
+	})
+	return s
+}

@@ -6,6 +6,6 @@ import (
 )
 
 func (s *SEngine) UseRouter() *SEngine {
-	s.POST("/login", routes.Login)
+	s.POST("/login", middleware.Cors(),routes.Login)
 	return s
 }

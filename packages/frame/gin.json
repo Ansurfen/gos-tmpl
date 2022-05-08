@@ -1,0 +1,12 @@
+{
+    "key":"core",
+    "version":"v1",
+    "branch":"main",
+    "path":[
+        "middleware",
+        "models",
+        "routes",
+        "engine",
+        "main.tmpl"
+    ]
+}

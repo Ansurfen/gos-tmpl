@@ -1,0 +1,10 @@
+package main
+
+import (
+	. "{{ .module }}/engine"
+)
+
+func main() {
+	r := NewApp().Default().UseRouter()
+	r.Run()
+}

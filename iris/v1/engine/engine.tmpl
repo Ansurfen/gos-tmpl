@@ -1,0 +1,28 @@
+package engine
+
+import (
+	"github.com/kataras/iris/v12"
+)
+
+type SEngine struct {
+	*iris.Application
+}
+
+func NewApp() *SEngine {
+	return &SEngine{
+		Application: iris.New(),
+	}
+}
+
+func (s *SEngine) Default() *SEngine {
+	s.Application = iris.Default()
+	return s
+}
+
+func (s *SEngine) Run(addr ...string) {
+	if len(addr) != 0 {
+		s.Application.Run(iris.Addr(addr[0]))
+	} else {
+		s.Application.Run(iris.Addr(":8888"))
+	}
+}

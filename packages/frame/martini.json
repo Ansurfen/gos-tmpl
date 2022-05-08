@@ -1,0 +1,9 @@
+{
+    "key":"core",
+    "version":"v1",
+    "branch":"main",
+    "path":[
+        "engine",
+        "main.tmpl"
+    ]
+}

@@ -1,0 +1,25 @@
+package engine
+
+import "github.com/codegangsta/martini"
+
+type SEngine struct {
+	*martini.ClassicMartini
+}
+
+func NewApp() *SEngine {
+	return &SEngine{
+		ClassicMartini: &martini.ClassicMartini{
+			Martini: martini.New(),
+			Router:  martini.NewRouter(),
+		},
+	}
+}
+
+func (s *SEngine) Default() *SEngine {
+	s.Martini.Use(martini.Logger())
+	s.Martini.Use(martini.Recovery())
+	s.Martini.Use(martini.Static("public"))
+	s.Martini.MapTo(s.Router, (*martini.Routes)(nil))
+	s.Martini.Action(s.Router.Handle)
+	return s
+}

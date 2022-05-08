@@ -1,14 +1,14 @@
 package routes
 
 import (
-	"{{ .module }}/model"
+	"{{ .module }}/models"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
 func Login(ctx *gin.Context) {
-	var data model.User
+	var data models.User
 	if err := ctx.ShouldBindJSON(&data); err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{
 			"error": err.Error(),
